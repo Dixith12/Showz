@@ -1,6 +1,8 @@
-import React from 'react'
-import ReactPlayer from 'react-player'
+import React, { useState } from 'react'
 import BlurCircle from './BlurCircle'
+import { dummyTrailers } from '../assets/assets'
+import ReactPlayer from 'react-player'
+
 
 const TrailerSection = () => {
     const [currentTrailer,setCurrentTrailer] = useState(dummyTrailers[0])
@@ -10,8 +12,10 @@ const TrailerSection = () => {
 
       <div className='relative mt-6'>
         <BlurCircle top='-100px' right='-100px'/>
+
+       
         <ReactPlayer url={currentTrailer.videoUrl} controls={false}
-        className='mx-auto max-w-full' width="960px" height="540px" />
+        className="mx-auto max-w-full" width="960px" height="540px" />
       </div>
     </div>
   )
